@@ -1,0 +1,39 @@
+{
+  "name": "apptest",
+  "version": "0.1.0",
+  "description": "apptest",
+  "scripts": {
+    "start": "npm run serve",
+    "build123": "npm run build-ts && npm run tslint",
+    "build": "npm run build-ts",
+    "serve": "node dist/server.js",
+    "watch-node": "sleep 5 && nodemon dist/server.js",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "dependencies": {
+    "@types/bcrypt-nodejs": "*",
+    "@types/compression": "*",
+    "@types/cors": "*",
+    "@types/express": "*",
+    "@types/node": "*",
+    "@types/validator": "*",
+    "@types/jsonwebtoken": "*",
+    "bcrypt-nodejs": "*",
+    "compression": "*",
+    "cors": "*",
+    "express": "*",
+    "typescript": "*",
+    "sequelize": "*",
+    "sqlite3": "*",
+    "jsonwebtoken": "*"
+  },
+  "devDependencies": {
+    "concurrently": "*",
+    "tslint": "*",
+    "nodemon": "*"
+  },
+  "main": "index.js"
+}
